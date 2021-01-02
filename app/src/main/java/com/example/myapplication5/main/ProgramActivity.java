@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication5.R;
 import com.example.myapplication5.main.Programs.Easy_program_1;
 import com.example.myapplication5.main.Programs.Easy_program_2;
+import com.example.myapplication5.main.Programs.Hard_program_1;
+import com.example.myapplication5.main.Programs.Hard_program_2;
 import com.example.myapplication5.main.Programs.Med_program_1;
 import com.example.myapplication5.main.Programs.Med_program_2;
 import com.example.myapplication5.main.Programs.Program;
@@ -27,6 +30,7 @@ public class ProgramActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mGetRoutineListLayoutManager;
     ArrayList<Routine> routineList;
     TextView mName;
+    ProgressBar mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class ProgramActivity extends AppCompatActivity {
         setContentView(R.layout.activity_program_page);
         routineList = new ArrayList<>();
         Intent intent = this.getIntent();
+        //mProgress= findViewById(R.id.pBar);
         String name= intent.getStringExtra("programName");
         mName=findViewById(R.id.program_title);
         mName.setText(name.toUpperCase());
@@ -46,6 +51,12 @@ public class ProgramActivity extends AppCompatActivity {
         }
         else if (name.equals("Medium program 1")){
             f= new Med_program_1(this);
+        }
+        else if (name.equals("Advanced program 1")){
+            f= new Hard_program_1(this);
+        }
+        else if (name.equals("Advanced program 2")){
+            f= new Hard_program_2(this);
         }
         else {
             f= new Med_program_2(this);
@@ -65,9 +76,23 @@ public class ProgramActivity extends AppCompatActivity {
 
 
         initializeRecyclerView();
+        //updateProgress();
+
        // getExerciseList();
-        System.out.println("please help T_T");
+
     }
+
+//    private void updateProgress() {
+//        //mProgress.setProgress(20);
+//        for(Routine e:routineList){
+//            if(e.getCheckComplete()[0]){
+//                mRoutineList.get
+//                mProgress.incrementProgressBy(1);
+//
+//            }
+//        }
+//    }
+
 
     private void getExerciseList() {
 
@@ -84,6 +109,7 @@ public class ProgramActivity extends AppCompatActivity {
         mGetRoutineListLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL ,false);
         mRoutineList.setLayoutManager(mGetRoutineListLayoutManager);
         mRoutineListAdapter = new RoutineListAdapter(routineList);
+
         mRoutineList.setAdapter(mRoutineListAdapter);
     }
 }

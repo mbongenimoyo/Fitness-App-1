@@ -64,7 +64,8 @@ public class RoutineExerciseAdapter extends RecyclerView.Adapter<RoutineExercise
     @Override
     public void onBindViewHolder(@NonNull final RoutineExerciseViewHolder holder, final int position) {
         if(exerciseList.get(position).getComplete()){
-            holder.mComplete.setImageResource(R.drawable.button_exercise_page_enabled);
+            holder.mComplete.setImageResource(R.drawable.checked);
+
         }
         if(exerciseList.get(position).getName()=="Rest"){
             holder.mName.setText(exerciseList.get(position).getName());
@@ -80,10 +81,11 @@ public class RoutineExerciseAdapter extends RecyclerView.Adapter<RoutineExercise
             @Override
             public void onClick(View v) {
                 exerciseList.get(holder.getAdapterPosition()).setComplete(true);
-                holder.mComplete.setImageResource(R.drawable.button_exercise_page_enabled);
-
-                db.setExerciseComplete(exerciseList.get(position).getName(),exerciseList.get(position).getProgram(),exerciseList.get(position).getRoutine());
+                holder.mComplete.setImageResource(R.drawable.checked);
+                holder.mComplete.setBackground(null);
                 exerciseList.get(position).setComplete(true);
+                db.setExerciseComplete(exerciseList.get(position).getName(),exerciseList.get(position).getProgram(),exerciseList.get(position).getRoutine());
+
                 checkIfRoutineComplete(exerciseList, v);
 
             }

@@ -17,7 +17,7 @@ public class Easy_2 implements Routine {
     int timedreps =15;
 
     int thumbnail;
-
+    Boolean[] com=new Boolean[]{false};
 
     public Easy_2(){
         exercisesList.add(new crunches(reps,"reps"));
@@ -38,6 +38,11 @@ public class Easy_2 implements Routine {
     @Override
     public int getThumbnail() {
         return thumbnail;
+    }
+
+    @Override
+    public void setComplete(Boolean e) {
+        this.checks[0] = e;
     }
 
     @Override

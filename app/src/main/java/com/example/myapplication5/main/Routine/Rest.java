@@ -37,6 +37,11 @@ public class Rest implements Routine {
     }
 
     @Override
+    public void setComplete(Boolean e) {
+        this.checks[0]=e;
+    }
+
+    @Override
     public String getName() {
         return name;
     }

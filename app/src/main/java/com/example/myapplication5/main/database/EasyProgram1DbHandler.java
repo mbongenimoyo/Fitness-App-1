@@ -165,6 +165,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(COLUMN_COMPLETE, false);
                 db.insert(TABLE_NAME, null, contentValues);
                 r = r + 5;
+                s=s+5;
 
             } else {
 
@@ -231,6 +232,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(COLUMN_COMPLETE, false);
                 db.insert(TABLE_NAME2, null, contentValues);
                 r = r + 5;
+                s=s+5;
 
             } else {
 
@@ -292,6 +294,12 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
         else if(program.equals("Medium_program_2")){
             table="mediumprogram2";
         }
+        else if(program.equals("Hard_program_1")){
+            table="hardprogram1";
+        }
+        else if(program.equals("Hard_program_2")){
+            table="hardprogram2";
+        }
 //        ContentValues cv = new ContentValues();
 //        cv.put(COLUMN_COMPLETE,1);
 //        db.update(TABLE_NAME, COLUMN_COMPLETE+" =")
@@ -351,6 +359,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(COLUMN_COMPLETE, false);
                 db.insert(TABLE_NAME3, null, contentValues);
                 r = r + 5;
+                s=s+5;
 
             } else {
 
@@ -416,6 +425,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(COLUMN_COMPLETE, false);
                 db.insert(TABLE_NAME4, null, contentValues);
                 r = r + 5;
+                s=s+5;
 
             } else {
 
@@ -430,13 +440,14 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(COLUMN_COMPLETE, false);
                 db.insert(TABLE_NAME4, null, contentValues);
                 r = r -5;
+
             }
         }
     }
 
     public void initialiseHardProgram1(SQLiteDatabase db) {
-        int r = 5;
-        int s=15;
+        int r = 30;
+        int s=45;
         for (int i = 1; i <=30; i++) {
 
             if (i % 5 != 0) {
@@ -449,7 +460,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "planks description 1");
                 contentValues.put(DESC2, "planks description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME, null, contentValues);
+                db.insert(TABLE_NAME5, null, contentValues);
 
                 contentValues.put(COLUMN_NAME, "crunches");
                 contentValues.put(COLUMN_PROGRAM, "Hard_program_1");
@@ -459,7 +470,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "crunches description 1");
                 contentValues.put(DESC2, "crunches description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME, null, contentValues);
+                db.insert(TABLE_NAME5, null, contentValues);
 
                 contentValues.put(COLUMN_NAME, "twisting crunches");
                 contentValues.put(COLUMN_PROGRAM, "Hard_program_1");
@@ -469,7 +480,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "twisting crunches description 1");
                 contentValues.put(DESC2, "twisting crunches description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME, null, contentValues);
+                db.insert(TABLE_NAME5, null, contentValues);
 
                 contentValues.put(COLUMN_NAME, "sit ups");
                 contentValues.put(COLUMN_PROGRAM, "Hard_program_1");
@@ -479,8 +490,9 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "crunches description 1");
                 contentValues.put(DESC2, "crunches description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME, null, contentValues);
+                db.insert(TABLE_NAME5, null, contentValues);
                 r = r + 5;
+                s=s+5;
 
             } else {
 
@@ -493,7 +505,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "rest day");
                 contentValues.put(DESC2, "");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME, null, contentValues);
+                db.insert(TABLE_NAME5, null, contentValues);
                 r = r - 10;
             }
         }
@@ -501,8 +513,8 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
 
     public void initialiseHardProgram2(SQLiteDatabase db) {
 
-        int r = 10;
-        int s=15;
+        int r = 35;
+        int s=50;
         for (int i = 1; i <= 30; i++) {
 
             if (i % 5 != 0) {
@@ -515,7 +527,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "planks description 1");
                 contentValues.put(DESC2, "planks description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME2, null, contentValues);
+                db.insert(TABLE_NAME6, null, contentValues);
 
                 contentValues.put(COLUMN_NAME, "crunches");
                 contentValues.put(COLUMN_PROGRAM, "Hard_program_2");
@@ -525,7 +537,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "crunches description 1");
                 contentValues.put(DESC2, "crunches description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME2, null, contentValues);
+                db.insert(TABLE_NAME6, null, contentValues);
 
                 contentValues.put(COLUMN_NAME, "twisting crunches");
                 contentValues.put(COLUMN_PROGRAM, "Hard_program_2");
@@ -535,7 +547,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "twisting crunches description 1");
                 contentValues.put(DESC2, "twisting crunches description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME2, null, contentValues);
+                db.insert(TABLE_NAME6, null, contentValues);
 
                 contentValues.put(COLUMN_NAME, "sit ups");
                 contentValues.put(COLUMN_PROGRAM, "Hard_program_2");
@@ -545,8 +557,9 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "crunches description 1");
                 contentValues.put(DESC2, "crunches description 2");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME2, null, contentValues);
+                db.insert(TABLE_NAME6, null, contentValues);
                 r = r + 5;
+                s=s+5;
 
             } else {
 
@@ -559,7 +572,7 @@ public class EasyProgram1DbHandler extends SQLiteOpenHelper {
                 contentValues.put(DESC1, "rest day");
                 contentValues.put(DESC2, "");
                 contentValues.put(COLUMN_COMPLETE, false);
-                db.insert(TABLE_NAME2, null, contentValues);
+                db.insert(TABLE_NAME6, null, contentValues);
                 r = r -5;
             }
         }

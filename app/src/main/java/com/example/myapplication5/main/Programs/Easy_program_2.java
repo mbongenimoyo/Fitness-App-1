@@ -17,40 +17,42 @@ public class Easy_program_2 implements Program {
     public ArrayList<Routine> routines= new ArrayList<>();
 
     public String name="Beginner program 2";
-    int thumbnail= R.drawable.lady_at_computer;
+    int thumbnail= R.drawable.easy2;
 
     public String TABLE_NAME="easyprogram2";
 
+    Context c;
     public Easy_program_2(){
 
     }
 
     public Easy_program_2(Context context){
-        EasyProgram1DbHandler e = new EasyProgram1DbHandler(context);
-
-        //e.getRoutines();
-        int size=e.countRoutines();
-        for(int i=1;i<=size;i++){
-            Cursor cur=e.getRoutine(i,TABLE_NAME);
-            ArrayList<String> exercises= new ArrayList<>();
-            ArrayList<Integer> reps = new ArrayList<>();
-            ArrayList<String> types= new ArrayList<>();
-            ArrayList<Integer> complete= new ArrayList<>();
-
-            String program="";
-            while(cur.moveToNext()){
-                exercises.add(cur.getString(3));
-                reps.add(cur.getInt(5));
-                types.add(cur.getString(4));
-                program=cur.getString(1);
-                complete.add(cur.getInt(8));
-
-
-            }
-            routines.add(new Easy_1(exercises,reps,types,program,complete,i));
-
-            //routines.add()
-        }
+        c=context;
+//        EasyProgram1DbHandler e = new EasyProgram1DbHandler(context);
+//
+//        //e.getRoutines();
+//        int size=e.countRoutines();
+//        for(int i=1;i<=size;i++){
+//            Cursor cur=e.getRoutine(i,TABLE_NAME);
+//            ArrayList<String> exercises= new ArrayList<>();
+//            ArrayList<Integer> reps = new ArrayList<>();
+//            ArrayList<String> types= new ArrayList<>();
+//            ArrayList<Integer> complete= new ArrayList<>();
+//
+//            String program="";
+//            while(cur.moveToNext()){
+//                exercises.add(cur.getString(3));
+//                reps.add(cur.getInt(5));
+//                types.add(cur.getString(4));
+//                program=cur.getString(1);
+//                complete.add(cur.getInt(8));
+//
+//
+//            }
+//            routines.add(new Easy_1(exercises,reps,types,program,complete,i));
+//
+//            //routines.add()
+//        }
 //        routines.add(new Easy_1(10,20));
 //        routines.add(new Easy_1(15,25));
 //        routines.add(new Easy_1(25,30));
@@ -95,7 +97,32 @@ public class Easy_program_2 implements Program {
     @Override
     public ArrayList<Routine> getRoutines() {
         //Easy_program_1 db = new Easy_program_1();
-        return routines;
+        EasyProgram1DbHandler e = new EasyProgram1DbHandler(c);
+
+        //e.getRoutines();
+        int size=e.countRoutines();
+        for(int i=1;i<=size;i++){
+            Cursor cur=e.getRoutine(i,TABLE_NAME);
+            ArrayList<String> exercises= new ArrayList<>();
+            ArrayList<Integer> reps = new ArrayList<>();
+            ArrayList<String> types= new ArrayList<>();
+            ArrayList<Integer> complete= new ArrayList<>();
+
+            String program="";
+            while(cur.moveToNext()){
+                exercises.add(cur.getString(3));
+                reps.add(cur.getInt(5));
+                types.add(cur.getString(4));
+                program=cur.getString(1);
+                complete.add(cur.getInt(8));
+
+
+            }
+            routines.add(new Easy_1(exercises,reps,types,program,complete,i));
+
+            //routines.add()
+        }
+        return  routines;
     }
 
     @Override

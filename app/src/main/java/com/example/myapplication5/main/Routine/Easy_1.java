@@ -17,6 +17,7 @@ public class Easy_1 implements Routine {
     int reps=10;
     int timedreps =15;
 
+
     int thumbnail;
 
 
@@ -66,6 +67,11 @@ public class Easy_1 implements Routine {
     @Override
     public int getThumbnail() {
         return thumbnail;
+    }
+
+    @Override
+    public void setComplete(Boolean e) {
+        this.checks[0] =e;
     }
 
     @Override

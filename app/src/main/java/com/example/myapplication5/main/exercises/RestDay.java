@@ -71,12 +71,12 @@ public class RestDay implements Exercise {
 
     @Override
     public void setComplete(Boolean b) {
-
+        this.complete=b;
     }
 
     @Override
     public Boolean getComplete() {
-        return false;
+        return complete;
     }
 
     @Override

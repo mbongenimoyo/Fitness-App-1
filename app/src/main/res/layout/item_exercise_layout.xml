@@ -15,7 +15,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-        android:background="@drawable/basic_crunch_exercise_part1"
+        android:background="@drawable/not_completed"
         android:id="@+id/exercise_list_item_image"/>
 
     <TextView

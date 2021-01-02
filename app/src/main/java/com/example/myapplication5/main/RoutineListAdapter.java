@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,22 +23,29 @@ public class RoutineListAdapter extends RecyclerView.Adapter<RoutineListAdapter.
 
     public ArrayList<Routine> routineList;
 
-
+    int completed=0;
     public RoutineListAdapter(ArrayList<Routine> exerciseList){
         this.routineList=exerciseList;
         System.out.println(this.routineList.size());
     }
+
+
 
     @NonNull
     @Override
     public RoutineListAdapter.RoutineListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_routine_layout, null,false);
         RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
         lp.bottomMargin=4;
         layoutView.setLayoutParams(lp);
 
         RoutineListViewHolder rcv = new RoutineListViewHolder(layoutView);
         return rcv;
+    }
+
+    public ArrayList<Routine>  getRoutineList(){
+        return  routineList;
     }
 
     @Override
@@ -49,8 +57,14 @@ public class RoutineListAdapter extends RecyclerView.Adapter<RoutineListAdapter.
             }
         }
 
+
+
         if(com==routineList.get(holder.getAdapterPosition()).getExercisesList().size()){
-            holder.mComplete.setImageResource(R.drawable.button_exercise_page_enabled);
+            holder.mComplete.setImageResource(R.drawable.checked);
+            holder.mComplete.setBackground(null);
+            routineList.get(holder.getAdapterPosition()).setComplete(true);
+
+
         }
         holder.mName.setText("Day "+(position+1));
        // holder.mImage.setImageResource(routineList.get(holder.getAdapterPosition()).getThumbnail());
@@ -120,6 +134,7 @@ public class RoutineListAdapter extends RecyclerView.Adapter<RoutineListAdapter.
         public ConstraintLayout mLayout;
        // public ImageView mImage;
         public ImageView mComplete;
+        public ProgressBar mProgress;
 
         public RoutineListViewHolder(@NonNull View view) {
             super(view);
@@ -127,6 +142,9 @@ public class RoutineListAdapter extends RecyclerView.Adapter<RoutineListAdapter.
            // mImage =view.findViewById(R.id.program_list_item_image);
             mLayout =view.findViewById(R.id.program_list_item_layout);
             mComplete= view.findViewById(R.id.program_list_item_complete);
+            mProgress = view.findViewById(R.id.pBar);
+
+            //mProgress.setProgress(0);
         }
     }
 }

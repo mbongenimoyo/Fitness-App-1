@@ -3,17 +3,19 @@
     package="com.example.myapplication5">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.ExerciseListActivity"/>
+        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".main.ExerciseListActivity" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,14 +23,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.ExercisePageActivity" />
-        <activity android:name=".main.ProgramActivity"/>
-        <activity android:name=".main.RoutineActivity"/>
-
-        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <activity android:name=".main.ProgramActivity" />
+        <activity android:name=".main.RoutineActivity" />
+       <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
-
+            android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
 
 </manifest>

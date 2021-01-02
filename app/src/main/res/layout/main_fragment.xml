@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/header_background_purple"
         android:orientation="vertical"
         android:padding="12dp">
@@ -41,89 +41,35 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <ImageView
-                android:id="@+id/Exercise_list_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="right"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/settings"
-                android:fontFamily="@font/montserrat_semibold"
-                android:paddingLeft="50dp"
-                android:paddingTop="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/settings"
-                android:text="30 Day abs"
-                android:textColor="#ffffff"
-                android:textSize="26sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.913"
-                app:layout_constraintStart_toEndOf="@+id/Header_title"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <ImageView-->
+<!--                android:id="@+id/Exercise_list_button"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginEnd="25dp"-->
+<!--                android:layout_marginRight="25dp"-->
+<!--                android:background="@drawable/settings"-->
+<!--                android:fontFamily="@font/montserrat_semibold"-->
+<!--                android:paddingLeft="50dp"-->
+<!--                android:paddingTop="20dp"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/settings"-->
+<!--                android:text="30 Day abs"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:textSize="26sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.913"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/Header_title"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="5px"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/dif_easy"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_toStartOf="@+id/dif_medium"
-                android:layout_toLeftOf="@+id/dif_medium"
-                android:background="@drawable/header_background_purple_diffulty_button"
-                android:fontFamily="@font/montserrat_semibold"
-                android:gravity="center_horizontal"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp"
-                android:text="EXERCISES"
-                android:textAlignment="center"
-                android:textColor="#EECCDB"
-                app:layout_constraintEnd_toStartOf="@+id/dif_medium"
-                app:layout_constraintHorizontal_bias="0.256"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="0dp"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/dif_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:fontFamily="@font/montserrat_semibold"
-                android:gravity="center_horizontal"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp"
-                android:text="PROGRAMS"
-                android:textAlignment="center"
-                android:textColor="#EECCDB"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
@@ -136,6 +82,82 @@
 <!--        android:id="@+id/home_image"-->
 <!--        android:src="@drawable/yoga_lady"-->
 <!--        android:scaleType="centerCrop" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dif_easy"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toStartOf="@+id/info"
+            android:layout_toLeftOf="@+id/info"
+            android:background="@drawable/header_background_purple_diffulty_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="EXERCISES"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/info"
+            app:layout_constraintHorizontal_bias="0.327"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+
+            android:id="@+id/info"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/header_background_purple_diffulty_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="INFO"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/header_background_purple_diffulty_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="SETTINGS"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.542"
+            app:layout_constraintStart_toEndOf="@+id/info"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain"
@@ -145,12 +167,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/programList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="450dp"
             android:layout_margin="5dp"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.101" />
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/bannerAdView"
@@ -158,9 +182,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:padding="10dp"
             android:layout_marginTop="10dp"
-            android:background="@color/cardview_dark_background"
+            android:layout_marginBottom="10dp"
+
+
             app:adSize="BANNER"
             app:adUnitId="ca-app-pub-3940256099942544/6300978111"
             app:layout_constraintBottom_toBottomOf="parent"

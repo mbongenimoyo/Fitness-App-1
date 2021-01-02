@@ -13,6 +13,7 @@ public interface Routine {
 
     public int getThumbnail();
 
+    public void setComplete(Boolean e);
 
     String getName();
 }

@@ -16,10 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication5.R;
 import com.example.myapplication5.main.database.EasyProgram1DbHandler;
 import com.example.myapplication5.main.database.EasyProgram2DbHandler;
+import com.example.myapplication5.main.exercises.Bicycle;
 import com.example.myapplication5.main.exercises.InAndOutSitUps;
+import com.example.myapplication5.main.exercises.KneeToElbow;
 import com.example.myapplication5.main.exercises.LegRaises;
 import com.example.myapplication5.main.exercises.Planks;
+import com.example.myapplication5.main.exercises.SidePlanks;
 import com.example.myapplication5.main.exercises.SitUp;
+import com.example.myapplication5.main.exercises.ToeTaps;
 import com.example.myapplication5.main.exercises.TwistingCrunches;
 import com.example.myapplication5.main.exercises.crunches;
 import com.google.android.gms.ads.AdRequest;
@@ -62,6 +66,7 @@ public class ExerciseListActivity extends AppCompatActivity {
         Exercise sitUps = new SitUp();
         Exercise inAndOut = new InAndOutSitUps();
         Exercise planks = new Planks(10,"seconds");
+
         //db.insertExercise(planks.getName(),planks.getType(),"Easy_program_1",1,planks.getReps(),planks.getDescription()[0],planks.getDescription()[1],false);
 
         exerciseList.add(crunch);
@@ -70,6 +75,11 @@ public class ExerciseListActivity extends AppCompatActivity {
         exerciseList.add(sitUps);
         exerciseList.add(inAndOut);
         exerciseList.add(planks);
+        exerciseList.add(new SidePlanks());
+        exerciseList.add(new Bicycle());
+        exerciseList.add(new KneeToElbow());
+        exerciseList.add(new ToeTaps());
+
 
         Cursor res=db.getRoutines();
         StringBuffer buf= new StringBuffer();

@@ -1,6 +1,8 @@
 package com.example.myapplication5.main;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication5.R;
 import com.example.myapplication5.main.Programs.Program;
+import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramViewHolder> {
@@ -38,6 +42,11 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
     @Override
     public void onBindViewHolder(@NonNull final ProgramAdapter.ProgramViewHolder holder, int position) {
         holder.mName.setText(programs.get(position).getName());
+
+//        Picasso.with(holder.itemView.getContext())
+//                .load(programs.get(position).getThumbnail())
+//                //.placeholder(programs.get(position).getThumbnail())
+//                .into(holder.mImage);
         holder.mImage.setImageResource(programs.get(position).getThumbnail());
 
         holder.mLayout.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +69,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
     }
 
     public class ProgramViewHolder  extends RecyclerView.ViewHolder{
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
 
         TextView mName;
         ImageView mImage;

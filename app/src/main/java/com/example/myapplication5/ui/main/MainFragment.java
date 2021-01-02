@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.myapplication5.InfoActivity;
 import com.example.myapplication5.R;
 import com.example.myapplication5.main.Exercise;
 import com.example.myapplication5.main.ExerciseListActivity;
@@ -80,7 +81,7 @@ public class MainFragment extends Fragment {
         // TODO: Use the ViewModel
        // final ImageView imageView = getView().findViewById(R.id.home_image);
         final TextView mExercises= getView().findViewById(R.id.dif_easy);
-        final TextView mMed= getView().findViewById(R.id.dif_medium);
+        final TextView mInfo= getView().findViewById(R.id.info);
         AdView mAdView = getView().findViewById(R.id.bannerAdView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -112,6 +113,17 @@ public class MainFragment extends Fragment {
 //                mMed.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), header_background_purple));
 //                mHard.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), header_background_purple));
                 startActivity(new Intent(getActivity().getApplicationContext(), ExerciseListActivity.class));
+            }
+        });
+
+        mInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                imageView.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), header_background_purple));
+//                mEasy.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), header_background_purple_diffulty_button ));
+//                mMed.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), header_background_purple));
+//                mHard.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), header_background_purple));
+                startActivity(new Intent(getActivity().getApplicationContext(), InfoActivity.class));
             }
         });
 
@@ -158,15 +170,15 @@ public class MainFragment extends Fragment {
 
 
     public void RoundImageView(ImageView imageView){
-        Bitmap mbitmap= ((BitmapDrawable)getResources().getDrawable(easy_1_image)).getBitmap();
-
-        Bitmap imageRounded=Bitmap.createBitmap(mbitmap.getWidth(),mbitmap.getHeight(),mbitmap.getConfig());
-        Canvas canvas = new Canvas(imageRounded);
-        Paint mpaint=new Paint();
-        mpaint.setAntiAlias(true);
-        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        canvas.drawRoundRect((new RectF(30, 0, mbitmap.getWidth(), mbitmap.getHeight())), 100, 100, mpaint); // Round Image Corner 100 100 100 100
-        imageView.setImageBitmap(imageRounded);
+//        Bitmap mbitmap= ((BitmapDrawable)getResources().getDrawable(easy_1_image)).getBitmap();
+//
+//        Bitmap imageRounded=Bitmap.createBitmap(mbitmap.getWidth(),mbitmap.getHeight(),mbitmap.getConfig());
+//        Canvas canvas = new Canvas(imageRounded);
+//        Paint mpaint=new Paint();
+//        mpaint.setAntiAlias(true);
+//        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+//        canvas.drawRoundRect((new RectF(30, 0, mbitmap.getWidth(), mbitmap.getHeight())), 100, 100, mpaint); // Round Image Corner 100 100 100 100
+//        imageView.setImageBitmap(imageRounded);
 
 
     }
@@ -176,6 +188,9 @@ public class MainFragment extends Fragment {
         mProgramList = getView().findViewById(R.id.programList);
         mProgramList.setNestedScrollingEnabled(false);
         mProgramList.setHasFixedSize(false);
+        mProgramList.setItemViewCacheSize(6);
+        mProgramList.setDrawingCacheEnabled(true);
+        mProgramList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_AUTO);
         mGetExerciseListLayoutManager = new LinearLayoutManager(getContext(), LinearLayout.VERTICAL ,false);
         mProgramList.setLayoutManager(mGetExerciseListLayoutManager);
         mProgramListAdapter = new ProgramAdapter(programList);

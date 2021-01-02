@@ -1,0 +1,53 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/info_item_layout"
+
+    android:layout_width="match_parent"
+
+    android:layout_marginBottom="50dp"
+
+    android:layout_height="wrap_content">
+
+    <!--        android:background="@drawable/not_completed"-->
+       />
+
+    <TextView
+
+        android:id="@+id/info_header"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="header"
+        android:textAlignment="center"
+        android:textColor="#5F4591"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/info_paragraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Crunches"
+        android:textAlignment="viewStart"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_header"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="RtlCompat" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
